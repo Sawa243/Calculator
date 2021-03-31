@@ -143,16 +143,20 @@ namespace Calculator
 
         private void Inversion(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(textBox1.Text) > 0)
+            if (textBox1.Text != "")
             {
-                _tmp = '-' + textBox1.Text;
-                textBox1.Text = _tmp;
-            }
-            else 
-            {
-                _tmp = textBox1.Text;
-                _tmp = _tmp.Substring(1);
-                textBox1.Text = _tmp;
+
+                if (Convert.ToInt32(textBox1.Text) > 0)
+                {
+                    _tmp = '-' + textBox1.Text;
+                    textBox1.Text = _tmp;
+                }
+                else
+                {
+                    _tmp = textBox1.Text;
+                    _tmp = _tmp.Substring(1);
+                    textBox1.Text = _tmp;
+                }
             }
         }
 
