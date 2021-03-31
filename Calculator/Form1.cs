@@ -101,7 +101,6 @@ namespace Calculator
 
         private void Inversion(object sender, EventArgs e)
         {
-
             if (Convert.ToInt32(textBox1.Text) > 0)
             {
                 _tmp = '-' + textBox1.Text;
