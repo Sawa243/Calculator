@@ -297,6 +297,7 @@ namespace Calculator
             this.button20.TabIndex = 32;
             this.button20.Text = "←";
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.DeleteElementButton);
             // 
             // multiplication
             // 
