@@ -89,7 +89,14 @@ namespace Calculator
         }
         private void DeleteElementButton(object sender, EventArgs e)
         {
-            
+            if (textBox1.Text.Length != 0)
+            {
+                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+            }
+            else
+            {
+                textBox1.Text = textBox1.Text.Insert(textBox1.Text.Length, "");
+            }
         }
     }
 }
