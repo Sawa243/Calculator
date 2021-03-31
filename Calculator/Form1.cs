@@ -36,22 +36,64 @@ namespace Calculator
         private void Result_Click(object sender, EventArgs e)
         {
             int answer = 0;
+            double _answer = 0;
+            string tmp = textBox1.Text;
+            bool flag = true;
+            if ( (_tmp.IndexOf(',') != -1) || (tmp.IndexOf(',') != -1) )
+            {
+                flag = false;
+            }
             switch (act)
             {
                 case '+':
-                    answer = Convert.ToInt32(_tmp) + Convert.ToInt32(textBox1.Text);
+                    if (flag)
+                    {
+                        answer = Convert.ToInt32(_tmp) + Convert.ToInt32(textBox1.Text);
+                    }
+                    else
+                    {
+                        _answer = Convert.ToDouble(_tmp) + Convert.ToDouble(textBox1.Text);
+                    }
                     break;
                 case '-':
-                    answer = Convert.ToInt32(_tmp) - Convert.ToInt32(textBox1.Text);
+                    if (flag)
+                    {
+                        answer = Convert.ToInt32(_tmp) - Convert.ToInt32(textBox1.Text);
+                    }
+                    else
+                    {
+                        _answer = Convert.ToDouble(_tmp) - Convert.ToDouble(textBox1.Text);
+                    }
                     break;
                 case '/':
-                    answer = Convert.ToInt32(_tmp) / Convert.ToInt32(textBox1.Text);
+                    if (flag)
+                    {
+                        answer = Convert.ToInt32(_tmp) / Convert.ToInt32(textBox1.Text);
+                    }
+                    else
+                    {
+                        _answer = Convert.ToDouble(_tmp) / Convert.ToDouble(textBox1.Text);
+                    }
                     break;
                 case '*':
-                    answer = Convert.ToInt32(_tmp) * Convert.ToInt32(textBox1.Text);
+                    if (flag)
+                    {
+                        answer = Convert.ToInt32(_tmp) * Convert.ToInt32(textBox1.Text);
+                    }
+                    else
+                    {
+                        _answer = Convert.ToDouble(_tmp) * Convert.ToDouble(textBox1.Text);
+                    }
                     break;
             }
-            textBox1.Text = answer + "";
+            if (flag)
+            {
+                textBox1.Text = answer + "";
+            }
+            else
+            {
+                textBox1.Text = _answer + "";
+            }
         }
         private void PlusButton(object sender, EventArgs e)
         {
@@ -117,9 +159,9 @@ namespace Calculator
         private void ConverterToDouble(object sender, EventArgs e)
         {
             _tmp = textBox1.Text;
-            if (_tmp.IndexOf('.') == -1)
+            if (_tmp.IndexOf(',') == -1)
             {
-                textBox1.Text += '.';
+                textBox1.Text += ',';
             }
         }
     }
