@@ -113,5 +113,14 @@ namespace Calculator
                 textBox1.Text = _tmp;
             }
         }
+
+        private void ConverterToDouble(object sender, EventArgs e)
+        {
+            _tmp = textBox1.Text;
+            if (_tmp.IndexOf('.') == -1)
+            {
+                textBox1.Text += '.';
+            }
+        }
     }
 }
