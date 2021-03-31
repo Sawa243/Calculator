@@ -12,7 +12,7 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
-        string _tmp = "";
+        string _tmp = "0";
         char act = ' ';
 
         public Form1()
@@ -22,15 +22,19 @@ namespace Calculator
    
         private void NumericButton_Click(object sender, EventArgs e)
         {
-            if (sender is Button)
-            {
+            //if (sender is Button)
+            //{
+           if(textBox1.Text=="0")
+            { 
+                textBox1.Text = "";
+            }
+           
                 Button button = (Button)sender;
                 textBox1.Text += button.Text;
-            }
-            else
-            {
-                throw new ArgumentException();
-            }
+            //else
+            //{
+            //    throw new ArgumentException();
+            //}
         }
 
         private void Result_Click(object sender, EventArgs e)
@@ -78,7 +82,7 @@ namespace Calculator
                 case '*':
                     if (flag)
                     {
-                        answer = Convert.ToInt32(_tmp) * Convert.ToInt32(textBox1.Text);
+                        answer = Convert.ToInt32(tmp) * Convert.ToInt32(textBox1.Text);
                     }
                     else
                     {
@@ -94,11 +98,13 @@ namespace Calculator
             {
                 textBox1.Text = _answer + "";
             }
+           
         }
         private void PlusButton(object sender, EventArgs e)
         {
+           
             _tmp = textBox1.Text;
-            textBox1.Text = "";
+            textBox1.Text = "0";
             act = '+';
         }
 
@@ -116,18 +122,19 @@ namespace Calculator
         }
         private void MultiplicationButton(object sender, EventArgs e)
         {
-            _tmp = textBox1.Text;
-            textBox1.Text = "";
-            act = '*';
-        }
+                
+                _tmp = textBox1.Text;
+                textBox1.Text = "0";
+                act = '*';
+    }
         private void CEButton(object sender, EventArgs e)
         {
-            textBox1.Text = "";
+            textBox1.Text = "0";
         }
         private void CButton(object sender, EventArgs e)
         {
-            _tmp = "";
-            textBox1.Text = "";
+            _tmp = "0";
+            textBox1.Text = "0";
         }
         private void DeleteElementButton(object sender, EventArgs e)
         {
@@ -137,13 +144,13 @@ namespace Calculator
             }
             else
             {
-                textBox1.Text = textBox1.Text.Insert(textBox1.Text.Length, "");
+                textBox1.Text = textBox1.Text.Insert(textBox1.Text.Length, "0");
             }
         }
 
         private void Inversion(object sender, EventArgs e)
         {
-            if (textBox1.Text != "")
+            if (textBox1.Text != "" /*|| textBox1.Text != "0"*/)
             {
 
                 if (Convert.ToInt32(textBox1.Text) > 0)
@@ -151,22 +158,27 @@ namespace Calculator
                     _tmp = '-' + textBox1.Text;
                     textBox1.Text = _tmp;
                 }
-                else
+                else if (Convert.ToInt32(textBox1.Text) < 0)
                 {
                     _tmp = textBox1.Text;
                     _tmp = _tmp.Substring(1);
                     textBox1.Text = _tmp;
                 }
             }
+            else
+            {
+                textBox1.Text = "0";
+            }        
         }
 
         private void ConverterToDouble(object sender, EventArgs e)
         {
-            _tmp = textBox1.Text;
-            if (_tmp.IndexOf(',') == -1)
+           string temp = textBox1.Text;
+            if (temp.IndexOf(',') == -1)
             {
                 textBox1.Text += ',';
             }
         }
+       
     }
 }

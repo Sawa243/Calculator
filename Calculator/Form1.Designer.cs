@@ -29,6 +29,7 @@ namespace Calculator
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.plusMinus = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.equalButton = new System.Windows.Forms.Button();
@@ -68,11 +69,14 @@ namespace Calculator
             // textBox1
             // 
             this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(246, 101);
             this.textBox1.TabIndex = 13;
+            this.textBox1.Text = "0";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox1.Click += new System.EventHandler(this.NumericButton_Click);
             // 
             // equalButton
@@ -342,6 +346,7 @@ namespace Calculator
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.plusMinus);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "CalCooLator";
             this.ResumeLayout(false);
