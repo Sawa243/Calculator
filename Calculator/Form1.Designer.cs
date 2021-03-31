@@ -63,6 +63,7 @@ namespace Calculator
             this.plusMinus.TabIndex = 3;
             this.plusMinus.Text = "+/-";
             this.plusMinus.UseVisualStyleBackColor = true;
+            this.plusMinus.Click += new System.EventHandler(this.Inversion);
             // 
             // textBox1
             // 
