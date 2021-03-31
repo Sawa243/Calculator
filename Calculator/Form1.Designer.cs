@@ -262,6 +262,7 @@ namespace Calculator
             this.Delete.TabIndex = 29;
             this.Delete.Text = "CE";
             this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.CEButton);
             // 
             // button18
             // 
@@ -284,6 +285,7 @@ namespace Calculator
             this.button19.TabIndex = 31;
             this.button19.Text = "C";
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.CButton);
             // 
             // button20
             // 

@@ -80,11 +80,11 @@ namespace Calculator
         }
         private void CEButton(object sender, EventArgs e)
         {
-            _tmp = "";
             textBox1.Text = "";
         }
         private void CButton(object sender, EventArgs e)
         {
+            _tmp = "";
             textBox1.Text = "";
         }
         private void DeleteElementButton(object sender, EventArgs e)
