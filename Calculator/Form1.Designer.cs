@@ -97,6 +97,7 @@ namespace Calculator
             this.pointButton.TabIndex = 15;
             this.pointButton.Text = ".";
             this.pointButton.UseVisualStyleBackColor = true;
+            this.pointButton.Click += new System.EventHandler(this.ConverterToDouble);
             // 
             // button0
             // 
