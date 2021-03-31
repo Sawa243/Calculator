@@ -98,5 +98,21 @@ namespace Calculator
                 textBox1.Text = textBox1.Text.Insert(textBox1.Text.Length, "");
             }
         }
+
+        private void Inversion(object sender, EventArgs e)
+        {
+
+            if (Convert.ToInt32(textBox1.Text) > 0)
+            {
+                _tmp = '-' + textBox1.Text;
+                textBox1.Text = _tmp;
+            }
+            else 
+            {
+                _tmp = textBox1.Text;
+                _tmp = _tmp.Substring(1);
+                textBox1.Text = _tmp;
+            }
+        }
     }
 }
